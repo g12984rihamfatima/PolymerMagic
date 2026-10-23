@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymer Magic Gallery</title>
+    <style>
+        body {
+            /* Path to your image */
+            background-image: url('Pic-BG.png'); 
+            
+            /* Prevents the image from tiling/repeating */
+            background-repeat: no-repeat; 
+            
+            /* Scales the image to cover the entire screen proportionally */
+            background-size: cover; 
+            
+            /* Centers the image in the viewport */
+            background-position: center; 
+            
+            /* Keeps the background fixed in place while scrolling */
+            background-attachment: fixed; 
+                       			
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			background-color: #f8f9fa;
+			color: #333;
+			line-height: 1.6;
+			padding: 2rem 1rem;
+			
+        }
+		
+		/* Reset and Base Styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		/* Header Styles */
+		.gallery-header {
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		.gallery-header h1 {
+			font-size: 2.5rem;
+			font-weight: 700;
+			color: #111;
+			margin-bottom: 0.5rem;
+		}
+
+		.gallery-header p {
+			color: #666;
+			font-size: 1.1rem;
+		}
+
+		/* Gallery Grid Layout */
+		.gallery-container {
+			display: grid;
+			/* Automatically creates columns that are at least 300px wide */
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			gap: 1.5rem;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		/* Gallery Item Cards */
+		.gallery-item {
+			position: relative;
+			overflow: hidden;
+			border-radius: 8px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+			background-color: #fff;
+			/* Aspect ratio fallback if images vary in size */
+			aspect-ratio: 3 / 2; 
+		}
+
+		/* Image Behaviors */
+		.gallery-item img {
+		    position: center;
+			width: 25%;
+			height: 25%;
+			object-fit: cover;
+			display: block;
+			transition: transform 0.5s ease;
+		}
+
+		/* Hover Effect: Zoom Image */
+		.gallery-item:hover img {
+			transform: scale(1.08);
+		}
+
+		/* Text Overlay Styling */
+		.image-overlay {
+			position: left;
+			top: 0;
+			left: 0;
+			width: 25%;
+			height: 25%;
+			background: rgba(0, 0, 0, 0.4);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		/* Hover Effect: Reveal Overlay */
+		.gallery-item:hover .image-overlay {
+			opacity: 1;
+		}
+
+		.overlay-text {
+			color: #fff;
+			font-size: 1.25rem;
+			font-weight: 600;
+			letter-spacing: 1px;
+			border-bottom: 2px solid #fff;
+			padding-bottom: 4px;
+			transform: translateY(20px);
+			transition: transform 0.3s ease;
+		}
+
+		.gallery-item:hover .overlay-text {
+			transform: translateY(0);
+		}	
+		
+    </style>
+</head>
+<body>
+
+    <header class="gallery-header">
+        <h1>POLYMER MAGIC</h1>
+        <p>Polymer clay art is a beautiful and creative craft that transforms simple clay into unique handmade creations. It allows artists to shape colourful clay into jewellery, keychains, miniature food, flowers, animals, and decorative items. One of the best things about polymer clay is that it offers endless possibilities for creativity and self-expression. Artists can experiment with different colours, shapes, and textures to bring their imagination to life. This art also develops patience, concentration, and artistic skills. Each handmade piece is special because it reflects the creativity and effort of its maker. Polymer clay art proves that even the simplest materials can become something extraordinary. Small creations, endless imagination, and beautiful art!</p>
+    </header>
+
+    <main class="gallery-container">
+        <!-- Gallery Item 1 -->
+        <div class="gallery-item" align="center">
+            <img src="Pic-1.png" alt="Sunflower Basket" loading="lazy">
+            <div class="image-overlay" align="center">
+                <span class="overlay-text">Sunflower Basket</span>
+            </div>
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item" align="center">
+            <img src="Pic-2.png" alt="Keychains" loading="lazy">
+            <div class="image-overlay" align="center">
+                <span class="overlay-text">Keychains</span>
+            </div>
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="gallery-item" align="center">
+            <img src="Pic-3.png" alt="Bouquet" loading="lazy">
+            <div class="image-overlay" align="center">
+                <span class="overlay-text">Bouquet</span>
+            </div>
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="gallery-item" align="center">
+            <img src="Pic-4.png" alt="Donut" loading="lazy">
+            <div class="image-overlay" align="center">
+                <span class="overlay-text">Donut</span>
+            </div>
+        </div>
+
+        <!-- Gallery Item 5 -->
+        <div class="gallery-item" align="center">
+            <img src="Pic-5.png" alt="Chick" loading="lazy">
+            <div class="image-overlay" align="center">
+                <span class="overlay-text">Chick</span>
+            </div>
+        </div>
+		
+    </main>
+
+</body>
+</html>
