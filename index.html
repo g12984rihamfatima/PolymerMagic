@@ -2,112 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polymer Magic Gallery</title>
     <style>
         body {
             background: #f4eaff;
             color: #111;
             font-family: Arial, sans-serif;
-        }
-		
-		/* Reset and Base Styles */
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		/* Header Styles */
-		.gallery-header {
-			text-align: center;
-			margin-bottom: 3rem;
-			padding-top: 2rem;
-		}
-
-		.gallery-header h1 {
-			font-size: 2.5rem;
-			font-weight: 700;
-			color: #111;
-			margin-bottom: 0.5rem;
-		}
-
-		.gallery-header p {
-			color: #000;
-			font-size: 1.1rem;
-			font-weight: 700;
-		}
-
-		/* Gallery Grid Layout */
-		.gallery-container {
-			display: grid;
-			/* Automatically creates columns that are at least 300px wide */
-			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-			gap: 1.5rem;
-			max-width: 1200px;
-			margin: 0 auto;
-		}
-
-		/* Gallery Item Cards */
-		.gallery-item {
-			position: relative;
-			overflow: hidden;
-			border-radius: 8px;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-			background-color: #fff;
-			/* Aspect ratio fallback if images vary in size */
-			aspect-ratio: 3 / 2; 
-		}
-
-		/* Image Behaviors */
-		.gallery-item img {
-		    position: center;
-			width: 95%;
-			height: 95%;
-			object-fit: cover;
-			display: block;
-			transition: transform 0.5s ease;
-		}
-
-		/* Hover Effect: Zoom Image */
-		.gallery-item:hover img {
-			transform: scale(1.08);
-		}
-
-		/* Text Overlay Styling */
-		.image-overlay {
-			top: 0;
-			left: 0;
-			width: 95%;
-			height: 95%;
-			background: rgba(0, 0, 0, 0.4);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			opacity: 0;
-			transition: opacity 0.3s ease;
-		}
-
-		/* Hover Effect: Reveal Overlay */
-		.gallery-item:hover .image-overlay {
-			opacity: 1;
-		}
-
-		.overlay-text {
-			color: #fff;
-			font-size: 1.25rem;
-			font-weight: 600;
-			letter-spacing: 1px;
-			border-bottom: 2px solid #fff;
-			padding-bottom: 4px;
-			transform: translateY(20px);
-			transition: transform 0.3s ease;
-		}
-
-		.gallery-item:hover .overlay-text {
-			transform: translateY(0);
-		}	
-		
+        }		
     </style>
 </head>
 <body>
